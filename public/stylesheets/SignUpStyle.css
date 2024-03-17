@@ -1,0 +1,84 @@
+.navbar {
+    border-radius: 30px;
+    margin-bottom: 60px;
+    overflow: visible;
+}
+  
+#logo {
+    width: 70px; 
+    height: auto; 
+    border-radius: 50px;
+    overflow: hidden;
+    margin-left: -150px;
+}
+  
+.navbar-toggler {
+    margin-right: 15px; 
+}
+  
+.nav-item.dropdown .nav-link.dropdown-toggle::after {
+    display: none;
+}
+  
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0c0b0b;
+    margin: 0; 
+    padding: 0; 
+}
+
+.container {
+    max-width: 500px;
+    margin-left: -50px; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(166, 49, 49, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #090909;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fffbfb;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}

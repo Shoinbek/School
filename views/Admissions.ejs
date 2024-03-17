@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <%- include ./partials/head %>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+        <link rel='stylesheet' href='stylesheets/style.css' />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <style>
+            body {
+            background-image: url('images/Admissions2.png');
+            }
+        </style>
+
+    </head>
+    <body>
+        <% include ./partials/navbar %>
+    <header>   
+        <h1>Welcome to Admissions </h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#admissions">Admissions</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="announcements">
+        <h2>Important Announcements</h2>
+        <ul>
+            <li>Join us for the Annual Science Fair on [Date]</li>
+            <li>Admissions for the upcoming academic year are now open. Apply today!</li>
+        </ul>
+    </section>
+
+    <section class="featured-programs">
+        <h2>Featured Programs</h2>
+        <div class="program">
+            <h3>Computer Science</h3>
+            <p>Explore the world of technology and innovation.</p>
+            <a href="#computer-science-details">Learn More</a>
+        </div>
+ 
+    </section>
+
+    <section class="calendar">
+        <h2>Upcoming Events</h2>
+
+        <div class="calendar-frame">
+
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>What Our Community Says</h2>
+        <div class="testimonial">
+            <blockquote>
+                "My time at [School Name] was transformative. The dedicated faculty and diverse programs prepared me for success in my career."
+            </blockquote>
+            <cite>John Doe, Alumni</cite>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#academic-calendar">Academic Calendar</a></li>
+                <li><a href="#faculty-directory">Faculty Directory</a></li>
+                <li><a href="#online-resources">Online Resources</a></li>
+            </ul>
+        </div>
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p>123 School Street, Cityville</p>
+            <p>Email: info@schoolname.com</p>
+            <p>Phone: +1 (555) 123-4567</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(item => {
+            item.addEventListener('click', () => {
+                if (item.nextElementSibling && item.nextElementSibling.classList.contains('show')) {
+                    item.click(); 
+                }
+            });
+        });
+    </script>
+
+    <% include ./partials/scripts %>
+
+    </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ./partials/head %>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel='stylesheet' href='stylesheets/style.css' />
+
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-e7c99JEEhh1WJldkfrH3YGBS5UqLj7xYFOxeFUqUpnDR4QCt4q3Yq3i4cNDa0HNT"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <style>
+        body {
+        background-image: url('images/School.png');
+        }
+    </style>
+</head>
+
+<body>
+    <% include ./partials/navbar %>
+    
+
+    <div class="wrapper mt-5">
+      <div class="jumbotron" style="background-color: black;">
+        <h1 style="color: #fcf6f6; margin-left: 0; margin-top: -50px; font-size: 2em; font-family: 'Times New Roman', serif; font-style: italic;">Insightful Horizon Welcomes You</h1>
+        <div class="row">
+          <div class="col-md-4" style="max-width: 450px;">
+            <div class="card h-100 border-0" style="background-color: black;">
+              <a href="/Admissions">
+                <img src="images\Athlete.png" class="card-img-top" alt="Image">
+              </a>
+              <div class="card-body" style="background-color: black; color: white;">
+                <h5 class="card-title">Athletic Achievements</h5>
+                <p class="card-text">Discover our victories and the spirit that defines us. From triumphant tournaments to individual excellence, explore our athletic legacy</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" style="max-width: 450px;">
+            <div class="card h-100 border-0" style="background-color: black;">
+              <a href="/Admissions">
+                <img src="images\Volunteer.png" class="card-img-top" alt="Image">
+              </a>
+              <div class="card-body" style="background-color: black; color: white;">
+                <h5 class="card-title">Volunteer Opportunities</h5>
+                <p class="card-text">Make a difference! Explore diverse volunteer opportunities that empower you to contribute to our community. Join us in creating positive change and fostering connections through meaningful service</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" style="max-width: 450px;">
+            <div class="card h-100 border-0" style="background-color: black;">
+              <a href="/Admissions">
+                <img src="images\Alumni.png" class="card-img-top" alt="Image">
+              </a>
+              <div class="card-body" style="background-color: black; color: white;">
+                <h5 class="card-title">Alumni Spotlights</h5>
+                <p class="card-text">Journey through the inspiring stories of our alumni. Discover their achievements, contributions, and the impact they've made since graduating. Join us in celebrating the success stories that shape our proud alumni community</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="custom-section" style="background-image: url(images/Admissions.png); background-position: top;">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-6" style="position: relative;">
+                  <h2 style="font-size: 3em; font-family: 'Times New Roman', serif; font-weight: bold; background: linear-gradient(to right, #ffffff, #000000, #000000); -webkit-background-clip: text; background-clip: text; margin-left: 20px; border-bottom: 5px solid #000; width: 210%;">SCHEDULE A TOUR</h2>
+                  <p style="background: linear-gradient(to right, #000000, #ff0000); -webkit-background-clip: text; background-clip: text; color: transparent; margin-left: 50px; font-size: 2em; font-family: 'Times New Roman', serif; font-weight: bold">HOME</p>
+                  <div style="background: linear-gradient(to right, #ffffff, #000000, #ffffff); padding: 10px; display: inline-block; margin-left: 75px;">
+                      <p style="background: linear-gradient(to right, #ff0000, #eeff00, #000000); -webkit-background-clip: text; background-clip: text; color: transparent; margin-left: 100px; font-size: 2em; font-family: 'Times New Roman', serif; font-weight: bold; margin-left: -5px;">TO THOSE</p>
+                  </div>
+                  <a href="/Admissions/Tour">
+                      <div style="position: absolute; top: 135px; right: -600px; background-color: #000000; padding: 10px; display: inline-block; border-radius: 50px;">
+                          <p style="font-size: 1.5em; font-family: 'Times New Roman', serif; font-weight: bold; color: #ffffff;">Sign up here</p>
+                      </div>
+                  </a>          
+                  <p style="background: linear-gradient(to right, #ff0000, #000000); -webkit-background-clip: text; background-clip: text; color: transparent; margin-left: 100px; font-size: 2em; font-family: 'Times New Roman', serif; font-weight: bold">WHO DREAM BIG</p>
+              </div>
+          </div>
+      </div>
+    </div>
+  
+  
+  
+  
+  
+  
+    <% include ./partials/scripts %>
+
+</body>
+</html>

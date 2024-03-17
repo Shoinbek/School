@@ -1,0 +1,74 @@
+body {
+  padding: 50px;
+  font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url('images/School.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+a {
+  color: #0a0a0a;
+}
+
+.navbar {
+  margin-top: -50px; 
+  margin-left: -50px;
+  margin-right: -50px;
+  border-radius: 30px;
+  overflow: visible;
+}
+
+#logo {
+  width: 70px; 
+  height: auto;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-left: -150px;
+}
+
+.navbar-toggler {
+  margin-right: 15px; 
+}
+
+.nav-item.dropdown .nav-link.dropdown-toggle::after {
+  display: none;
+}
+
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+@keyframes imageZoomOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95); 
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+
+
+.card:hover img {
+  animation: imageZoomOut 5s ease-in-out; 
+}
+
+.custom-section {
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px 0; 
+  margin-right: -50px;
+  margin-left: -50px;
+  margin-top: -100px;
+  border-radius: 50% 50% 0 0; 
+
+}
+
+
