@@ -32,15 +32,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/',LoginRoute);
-app.use('/',AcademicsRoute);
-app.use('/',AdmissionsRoute);
-app.use('/',EventsAndNewsRoute);
-app.use('/',GalleryRoute);
-app.use('/',OnlineResourcesRoute);
-app.use('/',SocialMediaIntegrationRoute);
-app.use('/',StudentsAndParentsRoute);
-app.use('/',TeacherCournerRoute);
+// app.use('/',LoginRoute);
+// app.use('/',AcademicsRoute);
+// app.use('/',AdmissionsRoute);
+// app.use('/',EventsAndNewsRoute);
+// app.use('/',GalleryRoute);
+// app.use('/',OnlineResourcesRoute);
+// app.use('/',SocialMediaIntegrationRoute);
+// app.use('/',StudentsAndParentsRoute);
+// app.use('/',TeacherCournerRoute);
 
 //Static Files
 app.use(express.static('public'))
