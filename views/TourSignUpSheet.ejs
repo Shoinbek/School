@@ -22,9 +22,9 @@
     <body>
         <% include ./partials/navbar %>
         
-        <div class="container" style="margin-left: 20px; width: 600px;">
-            <h1>Thank you for deciding to explore our campus!</h1>
-            <form id="signupForm">
+        <div class="custom-container" style="margin-left: 20px; width: 600px;">
+            <h1 style="color: aliceblue;">Thank you for deciding to explore our campus!</h1>
+            <form method="POST" action="/Admissions/TourSignUp">
                 <label for="firstname">First Name</label>
                 <input type="text" id="firstname" name="firstname" required>
 
@@ -72,7 +72,26 @@
 
                     
                 </select>
-                <input type="submit" value="Sign Up">
+                <input type="submit" value="Sign Up" onclick="return displayMessage()">
+
+                <script>
+                    function displayMessage() {
+                        var firstName = document.getElementById("firstname").value;
+                        var lastName = document.getElementById("lastname").value;
+                        var email = document.getElementById("email").value;
+                        var phone = document.getElementById("phone").value;
+                        var tourDateTime = document.getElementById("tourDateTime").value;
+                        var areaOfInterest = document.getElementById("areaOfInterest").value;
+                
+                        if (firstName === '' || lastName === '' || email === '' || phone === '' || tourDateTime === '' || areaOfInterest === '') {
+                            alert('Please fill out all fields before signing up.');
+                            return false; 
+                        } else {
+                            alert('Thank you, ' + firstName + '. Your data has been saved');
+                            return true; 
+                        }
+                    }
+                </script>
             </form>
         </div>
 

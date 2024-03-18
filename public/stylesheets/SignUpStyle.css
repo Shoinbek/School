@@ -22,6 +22,7 @@
   
 .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
     display: block;
+    margin-top: -6px;
 }
 
 body {
@@ -29,20 +30,25 @@ body {
     background-color: #0c0b0b;
     margin: 0; 
     padding: 0; 
+    background-image: url('/images/SignUp.png');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: right;
 }
 
-.container {
+.custom-container {
     max-width: 500px;
     margin-left: -50px; 
     padding: 20px;
     border-radius: 8px;
+    background-color:black ;
     box-shadow: 0 0 10px rgba(166, 49, 49, 0.1);
 }
 
-h1 {
+h1{
     text-align: center;
-    color: #333;
-    margin-bottom: 20px;
+    color: #ffffff;
+    font-family: 'Times New Roman', serif;
 }
 
 form {
@@ -53,7 +59,7 @@ form {
 label {
     display: block;
     margin-bottom: 5px;
-    color: #090909;
+    color: #ffffff;
 }
 
 input[type="text"],
