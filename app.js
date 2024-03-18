@@ -6,15 +6,15 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/Home_Page');
 var usersRouter = require('./routes/users');
-var LoginRoute = require('./routes/login');
-var AcademicsRoute = require('./routes/Academics');
-var AdmissionsRoute = require('./routes/Admissions');
-var EventsAndNewsRoute = require('./routes/Events_and_News');
-var GalleryRoute = require('./routes/Gallery');
-var OnlineResourcesRoute = require('./routes/Online_Resources');
-var SocialMediaIntegrationRoute = require('./routes/Social_Media_Integration');
-var StudentsAndParentsRoute = require('./routes/Students_and_Parents');
-var TeacherCournerRoute = require('./routes/Teacher_Corner');
+// var LoginRoute = require('./routes/login');
+// var AcademicsRoute = require('./routes/Academics');
+// var AdmissionsRoute = require('./routes/Admissions');
+// var EventsAndNewsRoute = require('./routes/Events_and_News');
+// var GalleryRoute = require('./routes/Gallery');
+// var OnlineResourcesRoute = require('./routes/Online_Resources');
+// var SocialMediaIntegrationRoute = require('./routes/Social_Media_Integration');
+// var StudentsAndParentsRoute = require('./routes/Students_and_Parents');
+// var TeacherCournerRoute = require('./routes/Teacher_Corner');
 
 
 
