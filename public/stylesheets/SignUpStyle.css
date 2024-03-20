@@ -10,6 +10,8 @@
     border-radius: 50px;
     overflow: hidden;
     margin-left: -150px;
+    display: flex;
+    flex-wrap: wrap;
 }
   
 .navbar-toggler {
@@ -33,17 +35,37 @@ body {
     background-image: url('/images/SignUp.png');
     background-size: cover; 
     background-repeat: no-repeat; 
-    background-position: right;
+    background-position: top;
 }
 
-.custom-container {
-    max-width: 500px;
-    margin-left: -50px; 
-    padding: 20px;
-    border-radius: 8px;
-    background-color:black ;
-    box-shadow: 0 0 10px rgba(166, 49, 49, 0.1);
+/* Containers--------------------------------------------- */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px; 
+    margin-left: 20px;
+    margin: auto;
 }
+
+.left-container,
+.right-container {
+    width: calc(50% - 30px); 
+}
+
+.left-container {
+    margin-right: 10px;
+    background-color:rgba(12, 11, 11, 0.75) ;
+    
+}
+
+.right-container {
+    margin-left: 10px;
+    background-color:rgba(12, 11, 11, 0.75);
+    color: white;
+
+}
+/* ------------------------------------------------- */
 
 h1{
     text-align: center;
@@ -88,3 +110,17 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #0056b3;
 }
+/* Text box------------------------------------- */
+#card-text {
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+
+@media only screen and (max-width: 600px) {
+    #card-text {
+        font-size: 12px;
+    }
+}
+/* -------------------------------------------- */

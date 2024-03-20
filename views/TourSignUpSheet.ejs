@@ -22,79 +22,94 @@
     <body>
         <% include ./partials/navbar %>
         
-        <div class="custom-container" style="margin-left: 20px; width: 600px;">
-            <h1 style="color: aliceblue;">Thank you for deciding to explore our campus!</h1>
-            <form method="POST" action="/Admissions/TourSignUp">
-                <label for="firstname">First Name</label>
-                <input type="text" id="firstname" name="firstname" required>
-
-                <label for="lastname">Last Name</label>
-                <input type="text" id="lastname" name="lastname" required>
-
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 123-456-7890" required>
-
-                <label for="tourDateTime">Preferred Tour Date and Time</label>
-                <input type="text" id="tourDateTime" name="tourDateTime" required>
-                
-                
-                <label for="areaOfInterest">Area of Interest</label>
-                <select id="areaOfInterest" name="areaOfInterest" required>
-                    <option value="">Select an area</option>
-                    <option value="physics">Physics</option>
-                    <option value="chemistry">Chemistry</option>
-                    <option value="Biology">Biology</option>
-                    <option value="environmental science">Environmental Science</option>
-                    <option value="astronomy">Astronomy</option>
-                    <option value="neuroscience">Neuroscience</option>
-                    <option value="medicine">Medicine</option>
-                    <option value="biotechnology">Biotechnology</option>
-                    <option value="computer programming">Computer Programming</option>
-                    <option value="data science">Data Science</option>
-                    <option value="artificial intelligence">Artificial Intelligence</option>
-                    <option value="machine learning">Machine Learning</option>
-                    <option value="cybersecurity">Cybersecurity</option>
-                    <option value="software engineering">Software Engineering</option>
-                    <option value="computer graphics">Computer Graphics</option>
-                    <option value="database systems">Database Systems</option>
-                    <option value="information technology">Information Technology</option>
-                    <option value="english">English Language</option>
-                    <option value="chinese">Chinese Language</option>
-                    <option value="russian">Russian Language</option>
-                    <option value="german">German Language</option>
-                    <option value="french">French Language</option>
-                    <option value="spanish">Spanish Language</option>
-                    <option value="italian">Italian Language</option>
-                    <option value="arabic">Arabic Language</option>
-
+        <div class="container" style=" margin: 10px auto; max-width: 95%; font-family: 'Times New Roman', Times, serif;"  >
+            <div class="left-container"  >
+                <h1 style="color: white;">Thank you for deciding to explore our campus!</h1>
+                <form method="POST" action="/Admissions/TourSignUp">
+                    <label for="firstname">First Name</label>
+                    <input type="text" id="firstname" name="firstname" required>
+    
+                    <label for="lastname">Last Name</label>
+                    <input type="text" id="lastname" name="lastname" required>
+    
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
                     
-                </select>
-                <input type="submit" value="Sign Up" onclick="return displayMessage()">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 123-456-7890" required>
+    
+                    <label for="tourDateTime">Preferred Tour Date and Time</label>
+                    <input type="text" id="tourDateTime" name="tourDateTime" required>
+                    
+                    
+                    <label for="areaOfInterest">Area of Interest</label>
+                    <select id="areaOfInterest" name="areaOfInterest" required>
+                        <option value="">Select an area</option>
+                        <option value="physics">Physics</option>
+                        <option value="chemistry">Chemistry</option>
+                        <option value="Biology">Biology</option>
+                        <option value="environmental science">Environmental Science</option>
+                        <option value="astronomy">Astronomy</option>
+                        <option value="neuroscience">Neuroscience</option>
+                        <option value="medicine">Medicine</option>
+                        <option value="biotechnology">Biotechnology</option>
+                        <option value="computer programming">Computer Programming</option>
+                        <option value="data science">Data Science</option>
+                        <option value="artificial intelligence">Artificial Intelligence</option>
+                        <option value="machine learning">Machine Learning</option>
+                        <option value="cybersecurity">Cybersecurity</option>
+                        <option value="software engineering">Software Engineering</option>
+                        <option value="computer graphics">Computer Graphics</option>
+                        <option value="database systems">Database Systems</option>
+                        <option value="information technology">Information Technology</option>
+                        <option value="english">English Language</option>
+                        <option value="chinese">Chinese Language</option>
+                        <option value="russian">Russian Language</option>
+                        <option value="german">German Language</option>
+                        <option value="french">French Language</option>
+                        <option value="spanish">Spanish Language</option>
+                        <option value="italian">Italian Language</option>
+                        <option value="arabic">Arabic Language</option>
+    
+                        
+                    </select>
+                    <label for="card-text">Additional Comments
+                    <textarea id="card-text" name="card-text" rows="4" cols="47.5" placeholder="Enter your additional comments here..."></textarea>
+                    
 
-                <script>
-                    function displayMessage() {
-                        var firstName = document.getElementById("firstname").value;
-                        var lastName = document.getElementById("lastname").value;
-                        var email = document.getElementById("email").value;
-                        var phone = document.getElementById("phone").value;
-                        var tourDateTime = document.getElementById("tourDateTime").value;
-                        var areaOfInterest = document.getElementById("areaOfInterest").value;
-                
-                        if (firstName === '' || lastName === '' || email === '' || phone === '' || tourDateTime === '' || areaOfInterest === '') {
-                            alert('Please fill out all fields before signing up.');
-                            return false; 
-                        } else {
-                            alert('Thank you, ' + firstName + '. Your data has been saved');
-                            return true; 
+                    <input type="submit" value="Sign Up" onclick="return displayMessage()">
+                    
+
+                    <script>
+                        function displayMessage() {
+                            var firstName = document.getElementById("firstname").value;
+                            var lastName = document.getElementById("lastname").value;
+                            var email = document.getElementById("email").value;
+                            var phone = document.getElementById("phone").value;
+                            var tourDateTime = document.getElementById("tourDateTime").value;
+                            var areaOfInterest = document.getElementById("areaOfInterest").value;
+                    
+                            if (firstName === '' || lastName === '' || email === '' || phone === '' || tourDateTime === '' || areaOfInterest === '') {
+                                alert('Please fill out all fields before signing up.');
+                                return false; 
+                            } else {
+                                alert('Thank you, ' + firstName + '. Your data has been saved');
+                                return true; 
+                            }
                         }
-                    }
-                </script>
-            </form>
+                    </script>
+                </form>
+            </div>
+            <div class="right-container">
+                <h1 style="color: white;">Tour Details</h1>
+                <p style="font-weight: bold;"> 1. Tour Itinerary: <p style="font-style: italic; margin-top: -20px;">During the tour, attendees will have the opportunity to explore various aspects of our school campus. This includes visits to classrooms, laboratories, the library, sports facilities, and other key areas. Additionally, attendees can expect engaging presentations and activities that showcase the diverse academic and extracurricular opportunities available at our school.</p>
+                <p style="font-weight: bold;"> 2. Duration: <p style="font-style: italic; margin-top: -20px;">The tour is expected to last approximately 1 hour, allowing attendees to gain a comprehensive understanding of our school environment without feeling rushed.</p>
+                <p style="font-weight: bold;"> 3. Accesibility Information: <p style="font-style: italic; margin-top: -20px;">Our tour route and facilities are designed to be accessible to individuals with disabilities. We provide accommodations and assistance as needed, and attendees are encouraged to notify us in advance if they require any specific arrangements.</p>
+                <p style="font-weight: bold;"> 4. Meeting Point: <p style="font-style: italic; margin-top: -20px;">Attendees should meet at the school's main entrance, where they will be greeted by our friendly tour guides who will lead them through the tour experience.</p>
+                <p style="font-weight: bold;"> 5. Guidelines for Parents/Guardians: <p style="font-style: italic; margin-top: -20px;">Parents or guardians are welcome to accompany students on the tour. We encourage them to actively participate and engage with our tour guides to learn more about our school community and offerings.</p>
+                <p style="font-weight: bold;"> 5. Parking Information: <p style="font-style: italic; margin-top: -20px;">Ample parking is available on campus behind Plaster Center. Attendees are kindly requested to follow any designated parking areas and adhere to any parking regulations to ensure a smooth experience for all visitors.</p>
+            </div>
         </div>
-
 
 
 
