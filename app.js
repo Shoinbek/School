@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const mongoose  = require('mongoose')
+
 var indexRouter = require('./routes/Home_Page');
 var usersRouter = require('./routes/users');
 // var LoginRoute = require('./routes/login');
@@ -20,6 +22,10 @@ var AdmissionsRoute = require('./routes/Admissions');
 
 var app = express();
 
+require('dotenv').config({ path:__dirname + '/.env'})
+mongoose.connect(process.env['DATABASE'])
+
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -34,7 +40,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 // app.use('/',LoginRoute);
 // app.use('/',AcademicsRoute);
-app.use('/Admissions',AdmissionsRoute);
+app.use('/Admissions', AdmissionsRoute);
 // app.use('/',EventsAndNewsRoute);
 // app.use('/',GalleryRoute);
 // app.use('/',OnlineResourcesRoute);

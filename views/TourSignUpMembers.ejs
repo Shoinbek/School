@@ -1,15 +1,188 @@
 <!DOCTYPE html>
 <html>
+<head>
     <%- include ./partials/head %>
-    <head>
-            <h1>This is the page for your Tour Members</h1>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/SignUpStyle.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <% include ./partials/navbar %>
 
-    </head>
-    <body>
-        <% include ./partials/navbar %>
-            <p> You first name is <%=firstname%></p>
-            <p> You last name is <%=lastname%></p>
-        <% include ./partials/scripts %>
+    <h2>Tour Stats</h2>
 
-    </body>
+    <div class="container" style="margin-left: 20px;">
+        <div class="TourMembersPerState" >
+          <h1 style="font-size: small; color: aliceblue;">Historical Data</h1>
+          <h1 style="font-size: small; color: aliceblue;">Number of Visitors per State</h1>
+
+            <canvas id="stateChart" width="300" height="300"></canvas>
+            <script>
+                // Make a GET request to retrieve tour members data from the server
+                fetch('/Admissions/tour-members-data')
+                    .then(response => response.json())
+                    .then(tourMembers => {
+                        // Process the retrieved data and create the chart
+                        const statesData = {};
+                        tourMembers.forEach(member => {
+                            const state = member.state;
+                            if (statesData[state]) {
+                                statesData[state]++;
+                            } else {
+                                statesData[state] = 1;
+                            }
+                        });
+                        
+                        const labels = Object.keys(statesData);
+                        const data = Object.values(statesData);
+                        
+                        // Create the chart using Chart.js
+                        const ctx = document.getElementById('stateChart').getContext('2d');
+                        const stateChart = new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: labels,
+                                datasets: [{
+                                    label: 'Tour Members',
+                                    data: data,
+                                    backgroundColor: "white",
+                                    borderColor: 'rgba(54, 162, 235, 1)',
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    x: {
+                                        grid: {
+                                            display: false // Hide gridlines on the x-axis
+                                        },
+                                        ticks: {
+                                            color: 'white' 
+                                        }
+                                    },
+                                    y: {
+                                        grid: {
+                                            display: false // Hide gridlines on the y-axis
+                                        },
+                                        ticks: {
+                                            color: 'white' 
+                                        },
+                                        beginAtZero: true
+                                    }
+                                },
+                                plugins: {
+                                    legend: {
+                                        display: false 
+                                    }
+                                }
+                            }
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Error fetching tour members data:', error);
+                    });
+            </script>
+        </div>
+        <div style="margin-top: 20px; width: min-content; background-color: rgba(0, 0, 0, 0.8); border-radius: 10px;">
+          <h1 style="color: aliceblue; font-size: small;">Area of Interest</h1>
+          <div class="AreaOfInterest" >
+            <canvas id="areaOfInterestChart" width="300" height="300"></canvas>
+            <script>
+                // Make a GET request to retrieve tour members data from the server
+                fetch('/Admissions/tour-AreaOfInterest-data')
+                    .then(response => response.json())
+                    .then(tourMembers => {
+                        // Process the retrieved data and create the chart
+                        const areasOfInterestData = {};
+                        tourMembers.forEach(member => {
+                            const areaOfInterest = member.areaOfInterest;
+                            if (areasOfInterestData[areaOfInterest]) {
+                                areasOfInterestData[areaOfInterest]++;
+                            } else {
+                                areasOfInterestData[areaOfInterest] = 1;
+                            }
+                        });
+
+                        const labels = Object.keys(areasOfInterestData);
+                        const data = Object.values(areasOfInterestData);
+
+                        // Create the chart using Chart.js
+                        const ctx = document.getElementById('areaOfInterestChart').getContext('2d');
+                        const areaOfInterestChart = new Chart(ctx, {
+                            type: 'pie',
+                            data: {
+                                labels: labels,
+                                datasets: [{
+                                    data: data,
+                                    backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#8A2BE2", "#A52A2A", "#20B2AA"], // Example colors
+                                    borderColor: 'white',
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                plugins: {
+                                    legend: {
+                                        display: false
+                                    }
+                                }
+                            }
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Error fetching tour members data:', error);
+                    });
+            </script>
+          </div>
+        </div>
+    </div>
+
+    <% include ./partials/scripts %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
 </html>
+
+
+<!-- <div class="wrapper"style="margin-left: 20px;" >
+  <div style="margin-top: 20px; width: min-content;">
+      <a href="/Patients/csv-export" class="btn btn-primary">Export to CSV</a>
+      <table class="table table-striped" style="background-color: aliceblue;"> 
+          <thead>
+              <tr>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Email</th>
+                  <th>Phone Number</th>
+                  <th>Date/Time</th>
+                  <th>Area of Interest</th>
+                  <th>State</th>
+
+              </tr>
+          </thead>
+          <tbody>
+              <% if (TourMembers && TourMembers.length > 0) { %>
+                  <% for (let i = 0; i < TourMembers.length; i++) { %>
+                      <tr>
+                          <td><%= TourMembers[i].firstname %></td>
+                          <td><%= TourMembers[i].lastname %></td>
+                          <td><%= TourMembers[i].email%></td>
+                          <td><%= TourMembers[i].phone %></td>
+                          <td><%= new Date(TourMembers[i].tourDateTime).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true }) %></td>
+                          <td><%= TourMembers[i].areaOfInterest %></td>
+                          <td><%= TourMembers[i].state %></td>
+                      </tr>
+                  <% } %>
+              <% } else { %>
+                  <tr>
+                      <td colspan="2">No tour sign-up members found</td>
+                  </tr>
+              <% } %>
+          </tbody>
+      </table> 
+
+      
+  </div>
+</div> -->
