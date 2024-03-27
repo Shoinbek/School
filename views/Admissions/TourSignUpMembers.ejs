@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <%- include ./partials/head %>
+    <%- include ../partials/head %>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/SignUpStyle.css' />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-    <% include ./partials/navbar %>
+    <% include ../partials/navbar %>
 
-    <h2>Tour Stats</h2>
+    <h2 class="tour-heading">Tour Statistics</h2>
+    <h3 class="tour-heading">[Historical Data]</h3>
 
-    <div class="container" style="margin-left: 20px;">
+    <div class="container" style="margin-left: 20px; background-color: rgba(0, 0, 0, 0.8); max-width: 97%; ">
         <div class="TourMembersPerState" >
-          <h1 style="font-size: small; color: aliceblue;">Historical Data</h1>
-          <h1 style="font-size: small; color: aliceblue;">Number of Visitors per State</h1>
+          <h1 style="font-size: small; color: aliceblue; font-family: 'Times New Roman', Times, serif;" >Number of Visitors per State</h1>
 
             <canvas id="stateChart" width="300" height="300"></canvas>
             <script>
@@ -85,7 +85,7 @@
             </script>
         </div>
         <div style="margin-top: 20px; width: min-content; background-color: rgba(0, 0, 0, 0.8); border-radius: 10px;">
-          <h1 style="color: aliceblue; font-size: small;">Area of Interest</h1>
+          <h1 style="color: aliceblue; font-size: small; font-family: 'Times New Roman', Times, serif;">Area of Interest</h1>
           <div class="AreaOfInterest" >
             <canvas id="areaOfInterestChart" width="300" height="300"></canvas>
             <script>
@@ -135,9 +135,58 @@
             </script>
           </div>
         </div>
+
+        <div style="margin-top: 20px; width: min-content; background-color: rgba(0, 0, 0, 0.8); border-radius: 10px;">
+            <h1 style="color: aliceblue; font-size: small;">Area of Interest Per State</h1>
+            <div class="state-areaOfInterestHorizontalBarChart">
+                <canvas id="state-areaOfInterestHorizontalBarChartCanvas" width="600" height="400"></canvas>
+                <script>
+                    fetch('/Admissions/tour-state-AreaOfInterest-data')
+                        .then(response => response.json())
+                        .then(statesAreasOfInterest => {
+                            // Process the retrieved data and create the chart
+                            const labels = statesAreasOfInterest.map(state => state._id);
+                            const datasets = statesAreasOfInterest.map(state => ({
+                                label: state._id,
+                                data: state.areasOfInterest.map(area => area.areaOfInterest.length),
+                                backgroundColor: 'rgba(255, 99, 132, 0.6)', // Bar color
+                                borderColor: 'rgba(255, 99, 132, 1)',
+                                borderWidth: 1
+                            }));
+        
+                            // Create the chart using Chart.js
+                            const ctx = document.getElementById('state-areaOfInterestHorizontalBarChartCanvas').getContext('2d');
+                            const areaOfInterestHorizontalBarChart = new Chart(ctx, {
+                                type: 'horizontalBar',
+                                data: {
+                                    labels: labels,
+                                    datasets: datasets
+                                },
+                                options: {
+                                    scales: {
+                                        x: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            });
+                        })
+                        .catch(error => {
+                            console.error('Error fetching areas of interest data:', error);
+                        });
+                </script>
+            </div>
+        </div>
+        
+        <!-- <div class="TourMembersPerState" >
+            <h1 style="font-size: small; color: aliceblue; font-family: 'Times New Roman', Times, serif;" >Something</h1>
+  
+              <canvas id="stateChart" width="300" height="300"></canvas>
+              
+        </div> -->
     </div>
 
-    <% include ./partials/scripts %>
+    <% include ../partials/scripts %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

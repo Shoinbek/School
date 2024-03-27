@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <%- include ../partials/head %>
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel='stylesheet' href='/stylesheets/academicPrograms.css' />
+
+      
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+
+    </head>
+    <body>
+        <% include ../partials/navbar %>
+        <div class="head">
+            <h1>Your Success Propels Our Mission Forward</h1>
+            <h2>Discover Your Path to Success</h2>
+        </div>
+        
+
+        <div class="container-fluid bg-light py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 mx-auto text-center">
+                        <h1 class="display-4">Explore Our Academic Programs</h1>
+                        <p class="lead">Choose from a wide range of academic programs tailored to meet your educational goals.</p>
+                    </div>
+                </div>
+    
+                <!-- Program Cards -->
+                <div class="row mt-5">
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow">
+                            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Program Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Computer Science</h5>
+                                <p class="card-text">Explore the world of algorithms and software development.</p>
+                                <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow">
+                            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Program Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Business Administration</h5>
+                                <p class="card-text">Develop essential skills for managing organizations and businesses.</p>
+                                <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow">
+                            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Program Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Biomedical Engineering</h5>
+                                <p class="card-text">Combine principles of engineering and medicine to solve healthcare challenges.</p>
+                                <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <% include ../partials/scripts %>
+
+    </body>
+</html>

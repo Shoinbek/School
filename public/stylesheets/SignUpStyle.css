@@ -32,7 +32,6 @@ body {
     background-color: #0c0b0b;
     margin: 0; 
     padding: 0; 
-    background-image: url('/images/SignUp.png');
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: top;
@@ -56,6 +55,7 @@ body {
 .left-container {
     margin-right: 10px;
     background-color:rgba(12, 11, 11, 0.75) ;
+    border-radius: 10px;
     
 }
 
@@ -63,6 +63,7 @@ body {
     margin-left: 10px;
     background-color:rgba(12, 11, 11, 0.75);
     color: white;
+    border-radius: 10px;
 
 }
 /* ------------------------------------------------- */
@@ -129,4 +130,23 @@ input[type="submit"]:hover {
     width: min-content; 
     background-color: rgba(0, 0, 0, 0.8); 
     border-radius: 10px;
+}
+
+h3.tour-heading{
+  font-family: 'Times New Roman', Times, serif; 
+  position: center; 
+  font-weight: bold; 
+  text-align: center; 
+  margin-top: -10px ;
+  font-style: italic;
+  font-size: 16px;
+                        
+}
+
+h2.tour-heading{
+    font-family: 'Times New Roman', Times, serif; 
+    position: center; 
+    font-weight: bold; 
+    text-align: center; 
+    margin-top: -40px;
 }

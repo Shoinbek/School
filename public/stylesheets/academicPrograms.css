@@ -1,0 +1,43 @@
+.navbar {
+    border-radius: 30px;
+    margin-bottom: 60px;
+    overflow: visible;
+}
+  
+#logo {
+    width: 70px; 
+    height: auto; 
+    border-radius: 50px;
+    overflow: hidden;
+    margin-left: -150px;
+    display: flex;
+    flex-wrap: wrap;
+}
+  
+.navbar-toggler {
+    margin-right: 15px; 
+}
+  
+.nav-item.dropdown .nav-link.dropdown-toggle::after {
+    display: none;
+}
+  
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: -6px;
+}
+.head{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.head h1{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.head h2{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
