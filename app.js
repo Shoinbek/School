@@ -12,11 +12,11 @@ var usersRouter = require('./routes/users');
 var AcademicsRoute = require('./routes/Academics');
 var AdmissionsRoute = require('./routes/Admissions');
 var EventsAndNewsRoute = require('./routes/Events_and_News');
-// var GalleryRoute = require('./routes/Gallery');
-// var OnlineResourcesRoute = require('./routes/Online_Resources');
-// var SocialMediaIntegrationRoute = require('./routes/Social_Media_Integration');
-// var StudentsAndParentsRoute = require('./routes/Students_and_Parents');
-// var TeacherCournerRoute = require('./routes/Teacher_Corner');
+var GalleryRoute = require('./routes/Gallery');
+var OnlineResourcesRoute = require('./routes/Online_Resources');
+var SocialMediaIntegrationRoute = require('./routes/Social_Media_Integration');
+var StudentsAndParentsRoute = require('./routes/Students_and_Parents');
+var TeacherCournerRoute = require('./routes/Teacher_Corner');
 
 
 
@@ -42,11 +42,11 @@ app.use('/users', usersRouter);
 app.use('/Academics',AcademicsRoute);
 app.use('/Admissions', AdmissionsRoute);
 app.use('/EventsAndNews',EventsAndNewsRoute);
-// app.use('/',GalleryRoute);
-// app.use('/',OnlineResourcesRoute);
-// app.use('/',SocialMediaIntegrationRoute);
-// app.use('/',StudentsAndParentsRoute);
-// app.use('/',TeacherCournerRoute);
+app.use('/Gallery',GalleryRoute);
+app.use('/Online/Resources',OnlineResourcesRoute);
+app.use('/SocialMediaIntegration',SocialMediaIntegrationRoute);
+app.use('/StudentsAndParents',StudentsAndParentsRoute);
+app.use('/TeacherCorner',TeacherCournerRoute);
 
 //Static Files
 app.use(express.static('public'))
